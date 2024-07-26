@@ -3,7 +3,7 @@ import models
 import dtos
 
 def register_user(infos:dtos.Register):
-    new_user = models.User(**infos._dict_, is_employee=False)
+    new_user = models.User(**infos.dict(), is_employee=False)
     models.users_model.append(new_user)
     return {"status": "sucess"}
 
